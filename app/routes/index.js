@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     return this.store.findAll('rental');
   },
 
+
   actions: {
     saveRental3(params) {
       var newRental = this.store.createRecord('rental', params);
@@ -16,11 +17,5 @@ export default Ember.Route.extend({
       rental.destroyRecord();
       this.transitionTo('index');
     },
-
-    addNewAnnouncement3(params) {
-      var newAnnouncement = this.store.createRecord('announcement',params);
-      newAnnouncement.save();
-      this.transitionTo('index');
-    }
   }
 });
